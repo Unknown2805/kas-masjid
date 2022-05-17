@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Masjid Darul Ilmi UMK</title>
+  <title>Masjid Intek</title>
   <link rel="icon" href="dist/img/masjid.jpg">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,7 +74,7 @@
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light"> Masjid Darul Ilmi</span>
+      <span class="brand-text font-weight-light"> Masjid Intek</span>
     </a>
 
     <!-- Sidebar -->
