@@ -24,7 +24,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Masjid Intek</title>
-	<link rel="icon" href="dist/img/masjid.jpg">
+	<!-- <link rel="icon" href="dist/img/masjid.jpg"> -->
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -89,7 +89,7 @@
 		<aside class="main-sidebar sidebar-dark-primary elevation-4">
 			<!-- Brand Logo -->
 			<a href="http://localhost/kas_masjid/" class="brand-link">
-				<img src="dist/img/masjid.jpg" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
+				<!-- <img src="dist/img/masjid.jpg" alt="AdminLTE Logo" class="brand-image" style="opacity: .8"> -->
 				<span class="brand-text font-weight-light"> Masjid Intek</span>
 			</a>
 
@@ -119,11 +119,11 @@
           if ($data_level=="Administrator"){
         ?>
 						<li class="nav-item">
-							<a href="http://localhost/kas_masjid/" class="nav-link">
+							<a href="http://localhost/coba/" class="nav-link active">
 								<i class="nav-icon fas fa-tachometer-alt"></i>
 								<p>
 									Dashboard
-									<span class="badge badge-primary right">3 Info</span>
+									
 								</p>
 							</a>
 						</li>
