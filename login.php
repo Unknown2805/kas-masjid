@@ -4,82 +4,61 @@
 ?>
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Masjid UMK | Log in</title>
-	<link rel="icon" href="dist/img/masjid.jpg">
-	<!-- Tell the browser to be responsive to screen width -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-	<!-- icheck bootstrap -->
-	<link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-	<!-- Theme style -->
-	<link rel="stylesheet" href="dist/css/adminlte.min.css">
-	<!-- Google Font: Source Sans Pro -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Masjid UMK | Log in</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="dist/css/login.css">
 </head>
-
-<body class="hold-transition login-page">
-	<div class="login-box">
-		<div class="login-logo">
-			<img src="dist/img/masjid.jpg" width=170px />
-			<br>
-			<a href="login.php">
-				<b>Aplikasi</b> Kas Masjid UMK</a>
-		</div>
-		<!-- /.login-logo -->
-		<div class="card">
-			<div class="card-body login-card-body">
-				<p class="login-box-msg">Login System</p>
-
-				<form action="" method="post">
-					<div class="input-group mb-3">
-						<input type="text" class="form-control" name="username" placeholder="Username" required>
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-user"></span>
-							</div>
-						</div>
-					</div>
-					<div class="input-group mb-3">
-						<input type="password" class="form-control" name="password" placeholder="Password" required>
-						<div class="input-group-append">
-							<div class="input-group-text">
-								<span class="fas fa-lock"></span>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<button type="submit" class="btn btn-primary btn-block btn-flat" name="btnLogin" title="Masuk Sistem">
+<body>
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="dist/img/mosque.jpg" alt="login" class="login-card-img">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="brand-wrapper">
+              <p class="login-card-description" ><b>Aplikasi</b> Kas Masjid UMK</a></p>
+              </div>
+              <p class="login-card-footer-text">Sign into your account 
+              
+              <form action="" method="post">
+                  <div class="form-group">
+                    <label for="username" class="sr-only">Name</label>
+                    <input type="text" name="username" id="name" class="form-control" placeholder=" enter your Name" required>
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="password" class="sr-only">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="enter your password">
+                  </div>
+				  <button type="submit" class="btn btn-success btn-block btn-flat" name="btnLogin" title="Masuk Sistem">
 								<b>Masuk</b>
 							</button>
-						</div>
-				</form>
-
-				</div>
-			</div>
-		</div>
-		<!-- /.login-box -->
-
-		<!-- jQuery -->
-		<script src="plugins/jquery/jquery.min.js"></script>
-		<!-- Bootstrap 4 -->
-		<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<!-- AdminLTE App -->
-		<script src="dist/js/adminlte.min.js"></script>
+                  <!-- <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login" name="btnLogin"> -->
+                </form>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  		<!-- AdminLTE App -->
+		  <script src="dist/js/adminlte.min.js"></script>
 		<!-- Alert -->
 		<script src="plugins/alert.js"></script>
-
 </body>
-
 </html>
 
 <?php
@@ -111,7 +90,7 @@ if (isset($_POST['btnLogin'])) {
 		echo "<script>
 			Swal.fire({title: 'Login Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
 			}).then((result) => {if (result.value)
-				{window.location = 'http://localhost/kas_masjid/';}
+				{window.location = 'http://localhost/coba/';}
 			})</script>";
 		}else{
 		echo "<script>
