@@ -49,7 +49,7 @@ $ssaldo = $smasuk - $skeluar;
     <div class="card-header border-0">
       <div class="d-flex justify-content-between">
         <h3 class="card-title">Rekap Kas Masjid</h3>
-        <a href="javascript:void(0);">View Report</a>
+        <a href="?page=rekap_km" class="nav-link">View Report</a>
       </div>
     </div>
     <div class="card-body">
