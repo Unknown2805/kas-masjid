@@ -20,10 +20,10 @@
     <div class="container">
       <div class="card login-card">
         <div class="row no-gutters">
-          <div class="col-md-5">
+          <div class="col-md-6">
             <img src="dist/img/mosque.jpg" alt="login" class="login-card-img">
           </div>
-          <div class="col-md-7">
+          <div class="col-md-6">
             <div class="card-body">
               <div class="brand-wrapper">
               <p class="login-card-description" ><b>Aplikasi</b> Kas Masjid UMK</a></p>
@@ -90,7 +90,7 @@ if (isset($_POST['btnLogin'])) {
 		echo "<script>
 			Swal.fire({title: 'Login Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
 			}).then((result) => {if (result.value)
-				{window.location = 'http://localhost/coba/';}
+				{window.location = 'http://localhost/kas-masjid/';}
 			})</script>";
 		}else{
 		echo "<script>
