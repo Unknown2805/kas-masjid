@@ -90,7 +90,7 @@ if (isset($_POST['btnLogin'])) {
 		echo "<script>
 			Swal.fire({title: 'Login Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
 			}).then((result) => {if (result.value)
-				{window.location = 'http://localhost/coba/';}
+				{window.location = 'http://localhost/kas-masjid/';}
 			})</script>";
 		}else{
 		echo "<script>
