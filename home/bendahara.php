@@ -38,247 +38,138 @@
 
 
 <div class="row">
-          <div class="col-lg-6">
+          <div class="col-lg-8 col-6">
             <div class="card">
+
               <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Online Store Visitors</h3>
-                  <a href="javascript:void(0);">View Report</a>
-                </div>
+             
+                  <h3 class="card-title">Pemasukan dan Pengeluaran kas Masjid</h3>
+                  
               </div>
+
               <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">820</span>
-                    <span>Visitors Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 12.5%
-                    </span>
-                    <span class="text-muted">Since last week</span>
-                  </p>
-                </div>
                 <!-- /.d-flex -->
 
                 <div class="position-relative mb-4">
-                  <canvas id="visitors-chart" height="200"></canvas>
+                  <canvas id="ali-chart" height="200"></canvas>
                 </div>
 
                 <div class="d-flex flex-row justify-content-end">
                   <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> This Week
+                    <i class="fas fa-circle text-primary"></i>Pemasukan
                   </span>
 
                   <span>
-                    <i class="fas fa-square text-gray"></i> Last Week
+                    <i class="fas fa-circle text-gray"></i> Pengeluaran
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-6">
+            <div class="card">
+              <div class="card-header border-0">
+           
+                  <h3 class="card-title">Rekap kas Masjid bulan ini</h3>
+              </div>
+              <div class="card-body">
+               
+                <!-- /.d-flex -->
+
+                <div class="chart-responsive mb-4">
+                      <canvas id="alisChart" height="210"></canvas>
+                </div>
+
+                <div class="d-flex flex-col">
+                  
+                  <span class="mr-1">
+                    <i class="fas fa-circle text-success"></i> Pemasukan
+                  </span>
+
+                  <span class="mr-1">
+                    <i class="fas fa-circle text-danger"></i> Pengeluaran
+                  </span>
+                  
+                  <span>
+                    <i class="fas fa-circle text-primary"></i> isi saldo
                   </span>
                 </div>
               </div>
             </div>
-            <!-- /.card -->
-
-            <div class="card">
-              <div class="card-header border-0">
-                <h3 class="card-title">Products</h3>
-                <div class="card-tools">
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-download"></i>
-                  </a>
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-bars"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="card-body table-responsive p-0">
-                <table class="table table-striped table-valign-middle">
-                  <thead>
-                  <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Sales</th>
-                    <th>More</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Some Product
-                    </td>
-                    <td>$13 USD</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        12%
-                      </small>
-                      12,000 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Another Product
-                    </td>
-                    <td>$29 USD</td>
-                    <td>
-                      <small class="text-warning mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        0.5%
-                      </small>
-                      123,234 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Amazing Product
-                    </td>
-                    <td>$1,230 USD</td>
-                    <td>
-                      <small class="text-danger mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        3%
-                      </small>
-                      198 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Perfect Item
-                      <span class="badge bg-danger">NEW</span>
-                    </td>
-                    <td>$199 USD</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        63%
-                      </small>
-                      87 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
+</div>
+<div class="row">
+          <div class="col-lg-8 h-50">
             <div class="card">
+
               <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Sales</h3>
-                  <a href="javascript:void(0);">View Report</a>
-                </div>
+           
+                  <h3 class="card-title">Pemasukan dan Pengeluaran kas Sosial</h3>
+                  
+            
               </div>
+
               <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">$18,230.00</span>
-                    <span>Sales Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 33.1%
-                    </span>
-                    <span class="text-muted">Since last month</span>
-                  </p>
-                </div>
+                
                 <!-- /.d-flex -->
 
                 <div class="position-relative mb-4">
-                  <canvas id="sales-chart" height="200"></canvas>
+                  <canvas id="deleps-chart" height="200"></canvas>
                 </div>
 
                 <div class="d-flex flex-row justify-content-end">
                   <span class="mr-2">
-                    <i class="fas fa-square text-primary"></i> This year
+                    <i class="fas fa-circle text-primary"></i> Pemasukan
                   </span>
 
                   <span>
-                    <i class="fas fa-square text-gray"></i> Last year
+                    <i class="fas fa-circle text-gray"></i> Pengeluaran                  </span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-6">
+            <div class="card">
+              <div class="card-header border-0">
+                  <h3 class="card-title">Rekap kas Sosial bulan ini</h3>   
+              </div>
+
+              <div class="card-body">
+                
+                <!-- /.d-flex -->
+
+                <div class="chart-responsive mb-4">
+                      <canvas id="delepsChart" height="210"></canvas>
+                </div>
+
+                <div class="d-flex flex-col">
+                  
+                  <span class="mr-1">
+                    <i class="fas fa-circle text-success"></i> Pemasukan
+                  </span>
+
+                  <span class="mr-1">
+                    <i class="fas fa-circle text-danger"></i> Pengeluaran
+                  </span>
+                  
+                  <span>
+                    <i class="fas fa-circle text-primary"></i> isi saldo
                   </span>
                 </div>
               </div>
             </div>
+          </div>
+</div>
             <!-- /.card -->
 
-            <div class="card">
-              <div class="card-header border-0">
-                <h3 class="card-title">Online Store Overview</h3>
-                <div class="card-tools">
-                  <a href="#" class="btn btn-sm btn-tool">
-                    <i class="fas fa-download"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-tool">
-                    <i class="fas fa-bars"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                  <p class="text-success text-xl">
-                    <i class="ion ion-ios-refresh-empty"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-success"></i> 12%
-                    </span>
-                    <span class="text-muted">CONVERSION RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-                <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
-                  <p class="text-warning text-xl">
-                    <i class="ion ion-ios-cart-outline"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
-                    </span>
-                    <span class="text-muted">SALES RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-                <div class="d-flex justify-content-between align-items-center mb-0">
-                  <p class="text-danger text-xl">
-                    <i class="ion ion-ios-people-outline"></i>
-                  </p>
-                  <p class="d-flex flex-column text-right">
-                    <span class="font-weight-bold">
-                      <i class="ion ion-android-arrow-down text-danger"></i> 1%
-                    </span>
-                    <span class="text-muted">REGISTRATION RATE</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-              </div>
-            </div>
-          </div>
-          <!-- /.col-md-6 -->
-        </div>
+            
+          
+          
+
 		<script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -288,4 +179,206 @@
 <script src="plugins/chart.js/Chart.min.js"></script>
 
 
-<script src="dist/js/pages/dashboard3.js"></script>
+<script>
+  $(function() {
+    'use strict'
+
+    var ticksStyle = {
+        fontColor: '#495057',
+        fontStyle: 'bold'
+    }
+
+    var mode = 'index'
+    var intersect = true
+
+    var $aliChart = $('#ali-chart')
+        // eslint-disable-next-line no-unused-vars
+    var aliChart = new Chart($aliChart, {
+        type: 'bar',
+        data: {
+            labels: ['JAN','FEB','MAR','APR','MAY','JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+            datasets: [{
+                    backgroundColor: '#007bff',
+                    borderColor: '#007bff',
+                    data: [1000, 2000, 3000, 4000, 4000, 4000, 4000, 4000, 4000,3000,2000,1000]
+                },
+                {
+                    backgroundColor: '#ced4da',
+                    borderColor: '#ced4da',
+                    data: [800, 1800, 2800, 3800, 3800, 3800, 3800, 3800, 3800,2800,1800,800]
+                }
+               
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            tooltips: {
+                mode: mode,
+                intersect: intersect
+            },
+            hover: {
+                mode: mode,
+                intersect: intersect
+            },
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    // display: false,
+                    gridLines: {
+                        display: true,
+                        lineWidth: '4px',
+                        color: 'rgba(0, 0, 0, .2)',
+                        zeroLineColor: 'transparent'
+                    },
+                    ticks: $.extend({
+                        beginAtZero: true,
+
+                        // Include a dollar sign in the ticks
+                        callback: function(value) {
+                            if (value >= 1000) {
+                                value /= 1000
+                                value += 'k'
+                            }
+
+                            return '$' + value
+                        }
+                    }, ticksStyle)
+                }],
+                xAxes: [{
+                    display: true,
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: ticksStyle
+                }]
+            }
+        }
+    })
+
+    var alisChartCanvas = $('#alisChart').get(0).getContext('2d')
+    var alisData = {
+        labels: [
+          'pengeluaran',
+          'Pemasukan',
+          'Saldo akhir',
+          
+        ],
+        datasets: [
+          {
+            data: [200,700,500],
+            backgroundColor: ['#f56954', '#25be3b','#00c0ef']
+          }
+        ]
+      }
+      var alisOptions = {
+        legend: {
+          display: false
+        }
+      }
+      // Create alis or douhnut chart
+      // You can switch between alis and douhnut using the method below.
+      // eslint-disable-next-line no-unused-vars
+      var alisChart = new Chart(alisChartCanvas, {
+        type: 'doughnut',
+        data: alisData,
+        options: alisOptions
+    })
+    
+    var delepsChartCanvas = $('#delepsChart').get(0).getContext('2d')
+    var delepsData = {
+        labels: [
+          'pengeluaran',
+          'Pemasukan',
+          'Saldo akhir',
+          
+        ],
+        datasets: [
+          {
+            data: [200,700,500],
+            backgroundColor: ['#f56954', '#25be3b','#00c0ef']
+          }
+        ]
+      }
+      var delepsOptions = {
+        legend: {
+          display: false
+        }
+      }
+      // Create deleps or douhnut chart
+      // You can switch between deleps and douhnut using the method below.
+      // eslint-disable-next-line no-unused-vars
+      var delepsChart = new Chart(delepsChartCanvas, {
+        type: 'doughnut',
+        data: delepsData,
+        options: delepsOptions
+    })
+
+    var $delepsChart = $('#deleps-chart')
+        // eslint-disable-next-line no-unused-vars
+    var delepsChart = new Chart($delepsChart, {
+        type: 'bar',
+        data: {
+            labels: ['JAN','FEB','MAR','APR','MAY','JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+            datasets: [{
+                    backgroundColor: '#007bff',
+                    borderColor: '#007bff',
+                    data: [1000, 2000, 3000, 4000, 4000, 4000, 4000, 4000, 4000,3000,2000,1000]
+                },
+                {
+                    backgroundColor: '#ced4da',
+                    borderColor: '#ced4da',
+                    data: [800, 1800, 2800, 3800, 3800, 3800, 3800, 3800, 3800,2800,1800,800]
+                }
+                
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            tooltips: {
+                mode: mode,
+                intersect: intersect
+            },
+            hover: {
+                mode: mode,
+                intersect: intersect
+            },
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    // display: false,
+                    gridLines: {
+                        display: true,
+                        lineWidth: '4px',
+                        color: 'rgba(0, 0, 0, .2)',
+                        zeroLineColor: 'transparent'
+                    },
+                    ticks: $.extend({
+                        beginAtZero: true,
+
+                        // Include a dollar sign in the ticks
+                        callback: function(value) {
+                            if (value >= 1000) {
+                                value /= 1000
+                                value += 'k'
+                            }
+
+                            return '$' + value
+                        }
+                    }, ticksStyle)
+                }],
+                xAxes: [{
+                    display: true,
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: ticksStyle
+                }]
+            }
+        }
+    }) 
+})
+</script>
