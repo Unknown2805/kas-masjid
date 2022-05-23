@@ -268,7 +268,7 @@
         datasets: [
           {
             data: [200,700,500],
-            backgroundColor: ['#f56954', '#00a65a','#00c0ef']
+            backgroundColor: ['#f56954', '#25be3b','#00c0ef']
           }
         ]
       }
@@ -297,7 +297,7 @@
         datasets: [
           {
             data: [200,700,500],
-            backgroundColor: ['#f56954', '#00a65a','#00c0ef']
+            backgroundColor: ['#f56954', '#25be3b','#00c0ef']
           }
         ]
       }
