@@ -2,8 +2,6 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jun 2020 pada 11.23
 -- Versi server: 10.4.6-MariaDB
 -- Versi PHP: 7.1.31
 

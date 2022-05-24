@@ -8,7 +8,7 @@
   }
 ?>
 
-<!-- kas pemasukan masjid -->
+<!-- bar chart kas pemasukan masjid -->
 <?php
   $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-01-01' AND '2022-02-01'");
   while ($data= $sql->fetch_assoc()) {
@@ -59,7 +59,7 @@
   }
 ?>
 
-<!-- kas pengeluaran masjid -->
+<!-- bar chart kas pengeluaran masjid -->
 <?php
   $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-01-01' AND '2022-02-01'");
   while ($data= $sql->fetch_assoc()) {
@@ -110,104 +110,104 @@
   }
 ?>
 
-<!-- kas pemasukan sosial -->
+<!-- bar chart kas pemasukan sosial -->
 <?php
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-01-01' AND '2022-02-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-01-01' AND '2022-02-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_jan=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-02-01' AND '2022-03-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-02-01' AND '2022-03-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_feb=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-03-01' AND '2022-04-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-03-01' AND '2022-04-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_mar=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-04-01' AND '2022-05-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-04-01' AND '2022-05-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_apr=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-05-01' AND '2022-06-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-05-01' AND '2022-06-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_may=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-06-01' AND '2022-07-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-06-01' AND '2022-07-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_jun=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-07-01' AND '2022-08-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-07-01' AND '2022-08-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_jul=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-08-01' AND '2022-09-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-08-01' AND '2022-09-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_ags=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-09-01' AND '2022-10-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-09-01' AND '2022-10-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_sep=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-10-01' AND '2022-11-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-10-01' AND '2022-11-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_okt=$data['tot_masuk'];
-  }$sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-11-01' AND '2022-12-01'");
+  }$sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-11-01' AND '2022-12-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_nov=$data['tot_masuk'];
   }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-12-01' AND '2022-01-01'");
+  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_sosial where jenis='Masuk' and tgl_ks BETWEEN '2022-12-01' AND '2022-01-01'");
   while ($data= $sql->fetch_assoc()) {
     $smasuk_des=$data['tot_masuk'];
   }
 ?>
 
-<!-- kas pengeluaran sosial -->
+<!-- bar chart kas pengeluaran sosial -->
 <?php
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-01-01' AND '2022-02-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-01-01' AND '2022-02-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_jan=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-02-01' AND '2022-03-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-02-01' AND '2022-03-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_feb=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-03-01' AND '2022-04-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-03-01' AND '2022-04-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_mar=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-04-01' AND '2022-05-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-04-01' AND '2022-05-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_apr=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-05-01' AND '2022-06-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-05-01' AND '2022-06-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_may=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-06-01' AND '2022-07-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-06-01' AND '2022-07-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_jun=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-07-01' AND '2022-08-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-07-01' AND '2022-08-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_jul=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-08-01' AND '2022-09-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-08-01' AND '2022-09-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_ags=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-09-01' AND '2022-10-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-09-01' AND '2022-10-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_sep=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-10-01' AND '2022-11-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-10-01' AND '2022-11-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_okt=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-11-01' AND '2022-12-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-11-01' AND '2022-12-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_nov=$data['tot_keluar'];
   }
-  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar' and tgl_km BETWEEN '2022-12-01' AND '2022-01-01'");
+  $sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_sosial where jenis='Keluar' and tgl_ks BETWEEN '2022-12-01' AND '2022-01-01'");
   while ($data= $sql->fetch_assoc()) {
     $skeluar_des=$data['tot_keluar'];
   }
@@ -246,12 +246,74 @@
 
 
 <div class="row">
-          <div class="col-lg-8 col-6">
+          
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header border-0">
+                  <h3 class="card-title">Rekap kas Masjid saat ini</h3>
+                  <br/>
+                  <h4 class="card-title d-flex">Saldo saat ini: <?php echo rupiah($saldo)?></h4>
+              </div>
+              <div class="card-body">           
+                <!-- /.d-flex -->
+                <div class="d-flex flex-cols justify-content-center">
+                  <div class="row">
+                    <div class="col-8 p-0 m-0">
+                      <span>
+                        <div class="chart-responsive">
+                            <canvas id="rmChart" height="180"></canvas>
+                        </div>
+                      </span>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-circle" style="color:#64dfdf;"></i>Pemasukan
+                      <br/>
+                      <i class="fas fa-circle" style="color:#168aad;"></i>Pengeluaran
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header border-0">
+                  <h3 class="card-title">Rekap kas Sosial saat ini</h3>
+                  <br/>
+                  <h4 class="card-title d-flex">Saldo saat ini: <?php echo rupiah($ssaldo)?></h4>
+              </div>
+              <div class="card-body">           
+                <!-- /.d-flex -->
+                <div class="d-flex flex-cols justify-content-center">
+                  <div class="row">
+                    <div class="col-8 p-0 m-0">
+                      <span>
+                        <div class="chart-responsive">
+                            <canvas id="rsChart" height="180"></canvas>
+                        </div>
+                      </span>
+                    </div>
+                    <div class="col-4">
+                      <i class="fas fa-circle" style="color:#64dfdf;"></i> Pemasukan
+                      <br/>
+                      <i class="fas fa-circle" style="color:#168aad;"></i> Pengeluaran
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+<div class="row">
+          <div class="col-lg-6">
             <div class="card">
 
               <div class="card-header border-0">
              
-                  <h3 class="card-title">Pemasukan dan Pengeluaran kas Masjid</h3>
+                  <h3 class="card-title">Pemasukan dan Pengeluaran kas Masjid</h3><br/>
+                  
                   
               </div>
 
@@ -263,12 +325,12 @@
                 </div>
 
                 <div class="d-flex flex-row justify-content-end">
-                  <span class="mr-2">
-                    <i class="fas fa-circle text-primary"></i>Pemasukan
+                <span class="mr-2">
+                    <i class="fas fa-circle" style="color:#64dfdf;"></i> Pemasukan
                   </span>
 
                   <span>
-                    <i class="fas fa-circle text-gray"></i> Pengeluaran
+                    <i class="fas fa-circle" style="color:#168aad"></i> Pengeluaran
                   </span>
                 </div>
               </div>
@@ -276,40 +338,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-6">
-            <div class="card">
-              <div class="card-header border-0">
-           
-                  <h3 class="card-title">Rekap kas Masjid saat ini</h3>
-              </div>
-              <div class="card-body">
-               
-                <!-- /.d-flex -->
-
-                <div class="chart-responsive mb-4">
-                      <canvas id="rmChart" height="210"></canvas>
-                </div>
-
-                <div class="d-flex flex-col">
-                  
-                  <span class="mr-1">
-                    <i class="fas fa-circle text-success"></i> Pemasukan
-                  </span>
-
-                  <span class="mr-1">
-                    <i class="fas fa-circle text-danger"></i> Pengeluaran
-                  </span>
-                  
-                  <span>
-                    <i class="fas fa-circle text-primary"></i> isi saldo
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-</div>
-<div class="row">
-          <div class="col-lg-8 h-50">
+          <div class="col-lg-6">
             <div class="card">
 
               <div class="card-header border-0">
@@ -329,48 +358,19 @@
 
                 <div class="d-flex flex-row justify-content-end">
                   <span class="mr-2">
-                    <i class="fas fa-circle text-primary"></i> Pemasukan
+                    <i class="fas fa-circle" style="color:#64dfdf;"></i> Pemasukan
                   </span>
 
                   <span>
-                    <i class="fas fa-circle text-gray"></i> Pengeluaran                  </span>
+                    <i class="fas fa-circle" style="color:#168aad"></i> Pengeluaran
+                  </span>
                 </div>
               </div>
               
             </div>
           </div>
 
-          <div class="col-lg-4 col-6">
-            <div class="card">
-              <div class="card-header border-0">
-                  <h3 class="card-title">Rekap kas Sosial saat ini</h3>   
-              </div>
-
-              <div class="card-body">
-                
-                <!-- /.d-flex -->
-
-                <div class="chart-responsive mb-4">
-                      <canvas id="rsChart" height="210"></canvas>
-                </div>
-
-                <div class="d-flex flex-col">
-                  
-                  <span class="mr-1">
-                    <i class="fas fa-circle text-success"></i> Pemasukan
-                  </span>
-
-                  <span class="mr-1">
-                    <i class="fas fa-circle text-danger"></i> Pengeluaran
-                  </span>
-                  
-                  <span>
-                    <i class="fas fa-circle text-primary"></i> isi saldo
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 </div>
             <!-- /.card -->
 
@@ -405,8 +405,8 @@
         data: {
             labels: ['JAN','FEB','MAR','APR','MAY','JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
             datasets: [{
-                    backgroundColor: '#007bff',
-                    borderColor: '#007bff',
+                    backgroundColor: '#64dfdf',
+                    borderColor: '#64dfdf',
                     data: [
                       <?php echo json_encode($masuk_jan)?>,
                       <?php echo json_encode($masuk_feb)?>,
@@ -423,8 +423,8 @@
                     ]
                 },
                 {
-                    backgroundColor: '#ced4da',
-                    borderColor: '#ced4da',
+                    backgroundColor: '#168aad',
+                    borderColor: '#168aad',
                     data: [
                       <?php echo json_encode($keluar_jan)?>,
                       <?php echo json_encode($keluar_feb)?>,
@@ -440,7 +440,7 @@
                       <?php echo json_encode($keluar_des)?>,
                     ]
                 }
-               
+                
             ]
         },
         options: {
@@ -496,19 +496,19 @@
     var rmChartCanvas = $('#rmChart').get(0).getContext('2d')
     var rmData = {
         labels: [
-          'pengeluaran',
           'Pemasukan',
-          'Saldo akhir',
+          'pengeluaran',
           
         ],
         datasets: [
           {
             data: [
+              <?php echo json_encode($masuk )?>,
               <?php echo json_encode($keluar)?>,
-              <?php echo json_encode($masuk)?>,
-              <?php echo json_encode($saldo)?>,
+              
+            
             ],
-            backgroundColor: ['#f56954', '#28dc54','#00c0ef']
+            backgroundColor: ['#64dfdf', '#168aad']
           }
         ]
       }
@@ -527,14 +527,13 @@
     })
     
     var $ksChart = $('#ks-chart')
-        // eslint-disable-next-line no-unused-vars
     var ksChart = new Chart($ksChart, {
         type: 'bar',
         data: {
             labels: ['JAN','FEB','MAR','APR','MAY','JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
             datasets: [{
-                    backgroundColor: '#007bff',
-                    borderColor: '#007bff',
+                    backgroundColor: '#64dfdf',
+                    borderColor: '#64dfdf',
                     data: [
                       <?php echo json_encode($smasuk_jan)?>,
                       <?php echo json_encode($smasuk_feb)?>,
@@ -551,8 +550,8 @@
                     ]
                 },
                 {
-                    backgroundColor: '#ced4da',
-                    borderColor: '#ced4da',
+                    backgroundColor: '#168aad',
+                    borderColor: '#168aad',
                     data: [
                       <?php echo json_encode($skeluar_jan)?>,
                       <?php echo json_encode($skeluar_feb)?>,
@@ -624,15 +623,16 @@
     var rsChartCanvas = $('#rsChart').get(0).getContext('2d')
     var rsData = {
         labels: [
-          'pengeluaran',
           'Pemasukan',
-          'Saldo akhir',
-          
+          'Pengeluaran', 
         ],
         datasets: [
           {
-            data: [<?php echo json_encode($skeluar)?>,<?php echo json_encode($smasuk)?>,<?php echo json_encode($ssaldo)?>],
-            backgroundColor: ['#f56954', '#28dc54','#00c0ef']
+            data: [
+              <?php echo json_encode($smasuk)?>,
+              <?php echo json_encode($skeluar)?>,
+            ],
+            backgroundColor: ['#64dfdf', '#168aad']
           }
         ]
       }

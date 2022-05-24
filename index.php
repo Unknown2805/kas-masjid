@@ -45,11 +45,11 @@
 	<script src="plugins/alert.js"></script>
 </head>
 
-<body class="hold-transition sidebar-mini sidebar-">
+<body class="hold-transition sidebar-mini sidebar">
 	<!-- Site wrapper -->
 	<div class="wrapper">
 		<!-- Navbar -->
-		<nav class="main-header navbar navbar-expand navbar-default navbar-light">
+		<nav class="main-header navbar navbar-expand navbar-default navbar-darkd">
 			<!-- Left navbar links -->
 			<ul class="navbar-nav">
 				<li class="nav-item">
@@ -58,13 +58,13 @@
 					</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
-					<a href="http://localhost/kas-masjid/" class="nav-link">Home</a>
+					<a href="http://localhost/kas-masjid/" class="nav-link text-secondary">Home</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
-					<a href="?page=rekap_km" class="nav-link">Rekap Kas Masjid</a>
+					<a href="?page=rekap_km" class="nav-link text-secondary" >Rekap Kas Masjid</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
-					<a href="?page=rekap_ks" class="nav-link">Rekap Kas Sosial</a>
+					<a href="?page=rekap_ks" class="nav-link text-secondary">Rekap Kas Sosial</a>
 				</li>
 			</ul>
 
@@ -77,18 +77,18 @@
 				}
 
 				#time {
-					font-size: 40px;
+					font-size: 20px;
 					color: #000000;
 				}
 
 				#day {
-					font-size: 40px;
-					color: #28a745;
+					font-size: 20px;
+					color: #000000;
 				}
 
 				#date {
 					font-size: 20px;
-					color: #28a745;
+					color: #000000;
 				}
 
 				
@@ -97,9 +97,7 @@
 			<div>
 			<p id="day">SUN</p>
 				<p id="date">9 May 2021</p>
-				<p id="time">1:20PM</p>
-				
-
+				<p id="time">1:20PM</p>	
 			</div>
 
 			<script type="text/javascript">
@@ -204,7 +202,7 @@
           if ($data_level=="Administrator"){
         ?>
 						<li class="nav-item">
-							<a href="http://localhost/kas-masjid/" class="nav-link active">
+							<a href="http://localhost/kas-masjid/" class="nav-link active" style="background-color:#17a2b8">
 								<i class="nav-icon fas fa-tachometer-alt"></i>
 								<p>
 									Dashboard
