@@ -49,11 +49,11 @@
 	<!-- Site wrapper -->
 	<div class="wrapper">
 		<!-- Navbar -->
-		<nav class="main-header navbar navbar-expand navbar-default navbar-darkd">
+		<nav class="main-header navbar navbar-expand navbar-default navbar-light">
 			<!-- Left navbar links -->
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link" data-widget="pushmenu">
+					<a class="nav-link text-info" data-widget="pushmenu">
 						<i class="fas fa-bars"></i>
 					</a>
 				</li>
@@ -309,7 +309,7 @@
           } elseif($data_level=="Bendahara"){
           ?>
 						<li class="nav-item">
-							<a href="http://localhost/kas-masjid/" class="nav-link active">
+							<a href="http://localhost/kas-masjid/" class="nav-link active" style="background-color:#17a2b8">
 								<i class="nav-icon fas fa-tachometer-alt"></i>
 								<p>
 									Dashboard

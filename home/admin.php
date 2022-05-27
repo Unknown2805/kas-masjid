@@ -8,55 +8,77 @@
   }
 ?>
 
+<?php
+
+ $sql = $koneksi->query("SELECT MONTHNAME(tgl_ks) as bln_masuk_ks, SUM(masuk) as pemasukan_ks from kas_sosial where jenis='Masuk' and month(CURDATE()) GROUP BY bln_masuk_ks");
+ foreach ($sql as $data) {
+   $blnmskks[] = $data['bln_masuk_ks'];
+   $masukks[] = $data['pemasukan_ks'];
+   
+ }
+ $sql = $koneksi->query("SELECT MONTHNAME(tgl_ks) as bln_keluar_ks, SUM(keluar) as pengeluaran_ks from kas_sosial where jenis='Keluar' GROUP BY bln_keluar_ks");
+ foreach ($sql as $data) {
+   $blnklrks[] = $data['bln_keluar_ks'];
+   $keluarks[] = $data['pengeluaran_ks'];
+   
+ }
+ 
+?>
+
 <!-- bar chart kas pemasukan masjid -->
 <?php
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-01-01' AND '2022-02-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_jan=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-02-01' AND '2022-03-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_feb=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-03-01' AND '2022-04-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_mar=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-04-01' AND '2022-05-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_apr=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-05-01' AND '2022-06-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_may=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-06-01' AND '2022-07-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_jun=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-07-01' AND '2022-08-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_jul=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-08-01' AND '2022-09-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_ags=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-09-01' AND '2022-10-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_sep=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-10-01' AND '2022-11-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_okt=$data['tot_masuk'];
-  }$sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-11-01' AND '2022-12-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_nov=$data['tot_masuk'];
-  }
-  $sql = $koneksi->query("SELECT SUM(masuk) as tot_masuk  from kas_masjid where jenis='Masuk' and tgl_km BETWEEN '2022-12-01' AND '2022-01-01'");
-  while ($data= $sql->fetch_assoc()) {
-    $masuk_des=$data['tot_masuk'];
-  }
+  require 'vendor/autoload.php';
+  use  Carbon\Carbon;
+  $this_year = Carbon::now()->format('Y');
+        $result_km = $koneksi->query("SELECT * from kas_masjid where tgl_km like '%{$this_year}%'");
+        $data_km=[];
+        $dataaa_km=[];
+        while($row = $result_km -> fetch_array(MYSQLI_ASSOC)){
+            $dataaa_km["masuk"]=$row["masuk"]; 
+            $dataaa_km["keluar"]=$row["keluar"]; 
+            $dataaa_km["tgl_km"]=$row["tgl_km"];
+            $data_km[]=$dataaa_km;
+            
+          }
+
+          // var_dump($data);
+          for($i=1;$i<=12;$i++){
+            $data_month_masuk_km[$i]=0;
+            $data_mont_keluar_km[$i]=0;
+          }
+          $data_fix=[];
+          foreach ($data_km as $m){
+            $month_km = explode('-',Carbon::parse($m["tgl_km"])->format('Y-m-d'))[1];
+            $data_month_masuk_km[(int)$month_km]+=$m['masuk'];
+            $data_mont_keluar_km[(int) $month_km]=$m['keluar'];
+        
+          }
+      
+        $result_ks = $koneksi->query("SELECT * from kas_sosial where tgl_ks like '%{$this_year}%'");
+        $data_ks=[];
+        $dataaa_ks=[];
+        while($row = $result_ks -> fetch_array(MYSQLI_ASSOC)){
+            $dataaa_ks["masuk"]=$row["masuk"]; 
+            $dataaa_ks["keluar"]=$row["keluar"]; 
+            $dataaa_ks["tgl_ks"]=$row["tgl_ks"];
+            $data_ks[]=$dataaa_ks;
+            
+          }
+  
+          // var_dump($data);
+          for($i=1;$i<=12;$i++){
+            $data_month_masuk_ks[$i]=0;
+            $data_mont_keluar_ks[$i]=0;
+          }
+          $data_fix=[];
+          foreach ($data_ks as $s){
+            $month_ks = explode('-',Carbon::parse($s["tgl_ks"])->format('Y-m-d'))[1];
+            $data_month_masuk_ks[(int)$month_ks]+=$s['masuk'];
+            $data_mont_keluar_ks[(int) $month_ks]=$s['keluar'];
+   
+          }
+        
+ 
 ?>
 
 <!-- bar chart kas pengeluaran masjid -->
@@ -398,47 +420,34 @@
 
     var mode = 'index'
     var intersect = true
-
+    
+    //ini bar chart kas masjid
     var $kmChart = $('#km-chart')
     var kmChart = new Chart($kmChart, {
         type: 'bar',
-        data: {
-            labels: ['JAN','FEB','MAR','APR','MAY','JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-            datasets: [{
+           data: {
+            labels: ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AGS','SEP','OKT','NOV','DES'],
+           //cari bar yang double gt dah bro
+           //double data set nya kak?
+            datasets: [
+                
+              {
                     backgroundColor: '#64dfdf',
                     borderColor: '#64dfdf',
-                    data: [
-                      <?php echo json_encode($masuk_jan)?>,
-                      <?php echo json_encode($masuk_feb)?>,
-                      <?php echo json_encode($masuk_mar)?>,
-                      <?php echo json_encode($masuk_apr)?>,
-                      <?php echo json_encode($masuk_may)?>,
-                      <?php echo json_encode($masuk_jun)?>,
-                      <?php echo json_encode($masuk_jul)?>,
-                      <?php echo json_encode($masuk_ags)?>,
-                      <?php echo json_encode($masuk_sep)?>,
-                      <?php echo json_encode($masuk_okt)?>,
-                      <?php echo json_encode($masuk_nov)?>,
-                      <?php echo json_encode($masuk_des)?>,
-                    ]
-                },
-                {
-                    backgroundColor: '#168aad',
-                    borderColor: '#168aad',
-                    data: [
-                      <?php echo json_encode($keluar_jan)?>,
-                      <?php echo json_encode($keluar_feb)?>,
-                      <?php echo json_encode($keluar_mar)?>,
-                      <?php echo json_encode($keluar_apr)?>,
-                      <?php echo json_encode($keluar_may)?>,
-                      <?php echo json_encode($keluar_jun)?>,
-                      <?php echo json_encode($keluar_jul)?>,
-                      <?php echo json_encode($keluar_ags)?>,
-                      <?php echo json_encode($keluar_sep)?>,
-                      <?php echo json_encode($keluar_okt)?>,
-                      <?php echo json_encode($keluar_nov)?>,
-                      <?php echo json_encode($keluar_des)?>,
-                    ]
+                    data: [<?php
+                    foreach($data_month_masuk_km as $dm => $value){
+                      echo $value.',';
+                    }
+                    ?>]
+                },{
+                    backgroundColor: '#168AAD',
+                    borderColor: '#168AAD',
+                    
+                    data: [<?php
+                    foreach($data_mont_keluar_km as $dm => $value){
+                      echo $value.',';
+                    }
+                    ?>]
                 }
                 
             ]
@@ -503,10 +512,8 @@
         datasets: [
           {
             data: [
-              <?php echo json_encode($masuk )?>,
+              <?php echo json_encode($masuk)?>,
               <?php echo json_encode($keluar)?>,
-              
-            
             ],
             backgroundColor: ['#64dfdf', '#168aad']
           }
@@ -526,48 +533,32 @@
         options: rmOptions
     })
     
+    //ini bar chart kas sosial
     var $ksChart = $('#ks-chart')
     var ksChart = new Chart($ksChart, {
         type: 'bar',
         data: {
-            labels: ['JAN','FEB','MAR','APR','MAY','JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-            datasets: [{
+            labels: ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AGS','SEP','OKT','NOV','DES'],
+            datasets: [
+                
+              {
                     backgroundColor: '#64dfdf',
                     borderColor: '#64dfdf',
-                    data: [
-                      <?php echo json_encode($smasuk_jan)?>,
-                      <?php echo json_encode($smasuk_feb)?>,
-                      <?php echo json_encode($smasuk_mar)?>,
-                      <?php echo json_encode($smasuk_apr)?>,
-                      <?php echo json_encode($smasuk_may)?>,
-                      <?php echo json_encode($smasuk_jun)?>,
-                      <?php echo json_encode($smasuk_jul)?>,
-                      <?php echo json_encode($smasuk_ags)?>,
-                      <?php echo json_encode($smasuk_sep)?>,
-                      <?php echo json_encode($smasuk_okt)?>,
-                      <?php echo json_encode($smasuk_nov)?>,
-                      <?php echo json_encode($smasuk_des)?>,
-                    ]
-                },
-                {
-                    backgroundColor: '#168aad',
-                    borderColor: '#168aad',
-                    data: [
-                      <?php echo json_encode($skeluar_jan)?>,
-                      <?php echo json_encode($skeluar_feb)?>,
-                      <?php echo json_encode($skeluar_mar)?>,
-                      <?php echo json_encode($skeluar_apr)?>,
-                      <?php echo json_encode($skeluar_may)?>,
-                      <?php echo json_encode($skeluar_jun)?>,
-                      <?php echo json_encode($skeluar_jul)?>,
-                      <?php echo json_encode($skeluar_ags)?>,
-                      <?php echo json_encode($skeluar_sep)?>,
-                      <?php echo json_encode($skeluar_okt)?>,
-                      <?php echo json_encode($skeluar_nov)?>,
-                      <?php echo json_encode($skeluar_des)?>,
-                    ]
+                    data: [<?php
+                    foreach($data_month_masuk_ks as $ds => $value){
+                      echo $value.',';
+                    }
+                    ?>]
+                },{
+                    backgroundColor: '#168AAD',
+                    borderColor: '#168AAD',
+                    
+                    data: [<?php
+                    foreach($data_mont_keluar_ks as $ds => $value){
+                      echo $value.',';
+                    }
+                    ?>]
                 }
-                
             ]
         },
         options: {
