@@ -7,9 +7,9 @@
     }
 ?>
 
-<div class="card card-danger">
+<div class="card card-success">
   <div class="card-header">
-    <h3 class="card-title"><i class="fa fa-edit"></i> Ubah Pengeluaran</h3>
+    <h3 class="card-title"><i class="fa fa-edit"></i> Ubah Pemasukan</h3>
   </div>
   <form action="" method="post" enctype="multipart/form-data">
     <div class="card-body">
@@ -24,9 +24,9 @@
       </div>
 
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">Pengeluaran</label>
+        <label class="col-sm-2 col-form-label">Pemasukan</label>
         <div class="col-sm-4">
-          <input type="text" class="form-control" id="keluar" name="keluar" value="<?php echo $data_cek['keluar']; ?>"/>
+          <input type="text" class="form-control" id="masuk" name="masuk" value="<?php echo $data_cek['masuk']; ?>"/>
         </div>
       </div>
 
@@ -40,7 +40,7 @@
     </div>
     <div class="card-footer">
       <input type="submit" name="Ubah" value="Simpan" class="btn btn-success" >
-      <a href="?page=o_data_ks" title="Kembali" class="btn btn-secondary">Batal</a>
+      <a href="?page=i_data_ks" title="Kembali" class="btn btn-secondary">Batal</a>
     </div>
   </form>
 </div>
@@ -52,7 +52,7 @@
     if (isset ($_POST['Ubah'])){
     $sql_ubah = "UPDATE kas_sosial SET
         uraian_ks='".$_POST['uraian_ks']."',
-        keluar='".$_POST['keluar']."',
+        masuk='".$_POST['masuk']."',
         tgl_ks='".$_POST['tgl_ks']."'
         WHERE id_ks='".$_POST['id_ks']."'";
     $query_ubah = mysqli_query($koneksi, $sql_ubah);
@@ -62,14 +62,14 @@
         echo "<script>
       Swal.fire({title: 'Ubah Data Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=o_data_ks';
+        {window.location = 'index.php?page=i_data_ks';
         }
       })</script>";
       }else{
       echo "<script>
       Swal.fire({title: 'Ubah Data Gagal',text: '',icon: 'error',confirmButtonText: 'OK'
       }).then((result) => {if (result.value)
-        {window.location = 'index.php?page=o_data_ks';
+        {window.location = 'index.php?page=i_data_ks';
         }
       })</script>";
     }}
