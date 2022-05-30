@@ -70,11 +70,11 @@
 					if (isset($_POST["submit"])) {
 						$srch = $_POST["search"];
 						$no = 1;
-						$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Keluar' OR tgl_ks LIKE '%$srch%' AND jenis='Keluar'");
+						$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Keluar' OR tgl_ks LIKE '%$srch%' AND jenis='Keluar' order by tgl_ks desc");
 
 
 						if ($data = $sql->fetch_assoc()) {
-							$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Keluar' OR tgl_ks LIKE '%$srch%' AND jenis='Keluar'");
+							$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Keluar' OR tgl_ks LIKE '%$srch%' AND jenis='Keluar' order by tgl_ks desc");
 
 							while ($data = $sql->fetch_assoc()) {
 					?>
