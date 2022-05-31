@@ -4,11 +4,11 @@
 		<i class="icon fas fa-info"></i> Total Pengeluaran Masjid
 	</h5>
 	<?php
-	$sql = $koneksi->query("SELECT SUM(Keluar) as tot_Keluar  from kas_masjid where jenis='Keluar'");
+	$sql = $koneksi->query("SELECT SUM(keluar) as tot_keluar  from kas_masjid where jenis='Keluar'");
 	while ($data = $sql->fetch_assoc()) {
 	?>
 		<h2>
-		<?php echo rupiah($data['tot_Keluar']);
+		<?php echo rupiah($data['tot_keluar']);
 	} ?>
 		</h2>
 
@@ -53,34 +53,55 @@
 
 			<table id="example1" class="table table-hover">
 
-				<thead>
+			<thead>
 					<tr>
 						<th>No</th>
-						<th>Tanggal</th>
+						<th>Tanggal
+							
+							<a href="http://localhost/kas-masjid/?page=o_data_km&desc=desc"><i class="fas fa-arrow-up" style="color:#000000;margin-left:2px"></i></a>
+							<a href="http://localhost/kas-masjid/?page=o_data_km&asc=asc"><i class="fas fa-arrow-down" style="color:#000000"></i></a>
+					    </th>
+						    
+							
 						<th>Uraian</th>
 						<th>Jumlah</th>
-						<th>Aksi</th>
+						<th>aksi</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php
+						$sort = "";
+					    if (isset($_POST["submit"])) {
+						
 
-
-
-					if (isset($_POST["submit"])) {
-						$srch = $_POST["search"];
-						$no = 1;
-						$sql = $koneksi->query("select * from kas_masjid where  uraian_km LIKE '%$srch%'  AND jenis='Keluar' OR tgl_km LIKE '%$srch%' AND jenis='Keluar'");
+						if(isset($_GET['desc']) && isset($_POST["submit"])){
+							$sort = $_GET['desc'];
+							$srch = $_POST["search"];
+						}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+							$sort = $_GET['asc'];
+							$srch = $_POST["search"];
+						}else{
+							$sort = "";
+						}
+						
+						$sql = $koneksi->query("select * from kas_masjid where uraian_km LIKE '%$srch%' AND jenis='Keluar' OR tgl_km LIKE '%$srch%' AND jenis='Keluar' order by tgl_km $sort");
 
 
 						if ($data = $sql->fetch_assoc()) {
-							$sql = $koneksi->query("select * from kas_masjid where uraian_km LIKE '%$srch%' AND jenis='Keluar' OR tgl_km LIKE '%$srch%' AND jenis='Keluar'");
+							$no = 1;
+							if(isset($_GET['desc']) && isset($_POST["submit"])){
+								$sort = $_GET['desc'];
+								$srch = $_POST["search"];
+							}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+								$sort = $_GET['asc'];
+								$srch = $_POST["search"];
+							}else{
+								$sort = "";
+							}
+							$sql = $koneksi->query("select * from kas_masjid where uraian_km LIKE '%$srch%' AND jenis='Keluar' OR tgl_km LIKE '%$srch%' AND jenis='Keluar' order by tgl_km $sort");
 
 							while ($data = $sql->fetch_assoc()) {
 					?>
-
-
-
 								<tr>
 
 									<td>
@@ -97,20 +118,27 @@
 										<?php echo rupiah($data['keluar']); ?>
 									</td>
 									<td>
-										<a href="?page=o_edit_km&kode=<?php echo $data['id_km']; ?>" title="Ubah" class="btn shadow btn-outline-success btn-sm">
+										<a href="?page=o_edit_km&kode=<?php echo $data['id_km']; ?>" title="Ubah" class="btn shadow  btn-outline-success btn-sm">
 											edit
 										</a>
-										<a href="?page=o_del_km&kode=<?php echo $data['id_km']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn shadow btn-outline-danger btn-sm">
+										<a href="?page=o_del_km&kode=<?php echo $data['id_km']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn shadow  btn-outline-danger btn-sm">
 											delete
 										</a>
 									</td>
 								</tr>
-
-
-							<?php
+								<?php
 							}
 						} else {
-							$sql = $koneksi->query("select * from kas_masjid where jenis='Keluar'");
+							if(isset($_GET['desc']) && isset($_POST["submit"])){
+								$sort = $_GET['desc'];
+								$srch = $_POST["search"];
+							}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+								$sort = $_GET['asc'];
+								$srch = $_POST["search"];
+							}else{
+								$sort = "";
+							}
+							$sql = $koneksi->query("select * from kas_masjid where jenis='Keluar' order by tgl_km $sort");
 							$no = 1;
 							while ($data = $sql->fetch_assoc()) {
 							?>
@@ -138,13 +166,18 @@
 										</a>
 									</td>
 								</tr>
-
-
 							<?php
 							}
 						}
 					} else {
-						$sql = $koneksi->query("select * from kas_masjid where jenis='Keluar'");
+						if(isset($_GET['desc'])){
+							$sort = $_GET['desc'];
+						}elseif(isset($_GET['asc'])){
+							$sort = $_GET['asc'];
+						}else{
+							$sort = "";
+						}
+						$sql = $koneksi->query("select * from kas_masjid where jenis='Keluar' order by tgl_km $sort");
 						$no = 1;
 						while ($data = $sql->fetch_assoc()) {
 							?>

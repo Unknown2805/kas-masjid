@@ -53,10 +53,16 @@
 
 			<table id="example1" class="table table-hover">
 
-				<thead>
+			<thead>
 					<tr>
 						<th>No</th>
-						<th>Tanggal</th>
+						<th>Tanggal
+							
+							<a href="http://localhost/kas-masjid/?page=i_data_ks&desc=desc"><i class="fas fa-arrow-up" style="color:#000000;margin-left:2px"></i></a>
+							<a href="http://localhost/kas-masjid/?page=i_data_ks&asc=asc"><i class="fas fa-arrow-down" style="color:#000000"></i></a>
+					    </th>
+						    
+							
 						<th>Uraian</th>
 						<th>Jumlah</th>
 						<th>Aksi</th>
@@ -64,23 +70,36 @@
 				</thead>
 				<tbody>
 					<?php
+					    if (isset($_POST["submit"])) {
+						
 
-
-
-					if (isset($_POST["submit"])) {
-						$srch = $_POST["search"];
-						$no = 1;
-						$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Masuk' OR tgl_ks LIKE '%$srch%' AND jenis='Masuk'");
+						if(isset($_GET['desc']) && isset($_POST["submit"])){
+							$sort = $_GET['desc'];
+							$srch = $_POST["search"];
+						}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+							$sort = $_GET['asc'];
+							$srch = $_POST["search"];
+						}else{
+							$sirt = "";
+						}
+						$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Masuk' OR tgl_ks LIKE '%$srch%' AND jenis='Masuk' order by tgl_ks $sort");
 
 
 						if ($data = $sql->fetch_assoc()) {
-							$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Masuk' OR tgl_ks LIKE '%$srch%' AND jenis='Masuk'");
+							$no = 1;
+							if(isset($_GET['desc']) && isset($_POST["submit"])){
+								$sort = $_GET['desc'];
+								$srch = $_POST["search"];
+							}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+								$sort = $_GET['asc'];
+								$srch = $_POST["search"];
+							}else{
+								$sort = "";
+							}
+							$sql = $koneksi->query("select * from kas_sosial where uraian_ks LIKE '%$srch%' AND jenis='Masuk' OR tgl_ks LIKE '%$srch%' AND jenis='Masuk' order by tgl_ks $sort");
 
 							while ($data = $sql->fetch_assoc()) {
 					?>
-
-
-
 								<tr>
 
 									<td>
@@ -105,12 +124,19 @@
 										</a>
 									</td>
 								</tr>
-
-
-							<?php
+								<?php
 							}
 						} else {
-							$sql = $koneksi->query("select * from kas_sosial where jenis='Masuk' order by tgl_ks desc");
+							if(isset($_GET['desc']) && isset($_POST["submit"])){
+								$sort = $_GET['desc'];
+								$srch = $_POST["search"];
+							}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+								$sort = $_GET['asc'];
+								$srch = $_POST["search"];
+							}else{
+								$sort = "";
+							}
+							$sql = $koneksi->query("select * from kas_sosial where jenis='Masuk' order by tgl_ks $sort");
 							$no = 1;
 							while ($data = $sql->fetch_assoc()) {
 							?>
@@ -138,13 +164,18 @@
 										</a>
 									</td>
 								</tr>
-
-
 							<?php
 							}
 						}
 					} else {
-						$sql = $koneksi->query("select * from kas_sosial where jenis='Masuk' order by tgl_ks desc");
+						if(isset($_GET['desc'])){
+							$sort = $_GET['desc'];
+						}elseif(isset($_GET['asc'])){
+							$sort = $_GET['asc'];
+						}else{
+							$sort = "";
+						}
+						$sql = $koneksi->query("select * from kas_sosial where jenis='Masuk' order by tgl_ks $sort");
 						$no = 1;
 						while ($data = $sql->fetch_assoc()) {
 							?>

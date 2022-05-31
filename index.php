@@ -305,13 +305,13 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="?page=i_data_km" class="nav-link">
+										<a href="http://localhost/kas-masjid/?page=i_data_km&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Masjid</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="?page=o_data_km" class="nav-link">
+										<a href="http://localhost/kas-masjid/?page=o_data_km&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-danger"></i>
 											<p>Pengeluaran Kas Masjid</p>
 										</a>
@@ -335,13 +335,13 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="?page=i_data_ks" class="nav-link">
+										<a href="http://localhost/kas-masjid/?page=i_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Sosial</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="?page=o_data_ks" class="nav-link">
+										<a href="http://localhost/kas-masjid/?page=o_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-danger"></i>
 											<p>Pengeluaran Kas Sosial</p>
 										</a>
@@ -412,7 +412,7 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="?page=i_data_km" class="nav-link">
+										<a href="http://localhost/kas-masjid/?page=i_data_km&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Masjid</p>
 										</a>
@@ -442,13 +442,13 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="?page=i_data_ks" class="nav-link">
+										<a href="http://localhost/kas-masjid/?page=i_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Sosial</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="?page=o_data_ks" class="nav-link">
+										<a href="http://localhost/kas-masjid/?page=o_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-danger"></i>
 											<p>Pengeluaran Kas Sosial</p>
 										</a>
