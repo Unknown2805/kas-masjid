@@ -4,14 +4,15 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
-<?php
+
+
+<body>
+    <?php
 $con = mysqli_connect("localhost", "root", "", "kas-masjid");
 $id = $_GET['id'];
 $select = mysqli_query($con, "select * from tb_masjid where id='$id'");
 $row = mysqli_fetch_assoc($select);
 ?>
-
-<body>
     <form action="" method="POST" enctype="multipart/form-data">
             <div align="center" class="card" style="width: 18rem;">
                 <img src=" profile_images/<?php echo $row['profile']; ?>" style="width:220px;height:200px">

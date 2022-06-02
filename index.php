@@ -197,9 +197,7 @@ include "inc/rupiah.php";
 
 
 
-
-
-
+		
 		<!-- Main Sidebar Container -->
 		<aside class="main-sidebar sidebar-light-primary elevation-4">	
 			<!-- Brand Logo -->
