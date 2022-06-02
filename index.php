@@ -201,27 +201,35 @@ include "inc/rupiah.php";
 		<!-- Main Sidebar Container -->
 		<aside class="main-sidebar sidebar-light-primary elevation-4">	
 			<!-- Brand Logo -->
-			<?php
+			
+			
+
+
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar user (optional) -->
+				<?php
 			// database connection
 			$con = mysqli_connect("localhost", "root", "", "kas-masjid");
 
 			$select = mysqli_query($con, "select * from tb_masjid");
 			while ($row = mysqli_fetch_array($select)) {
 			?>
-				<p>
-					<img src="profile_images/<?php echo $row['profile']; ?>" style="width:80px;height:80px;">
-				</p>
-				<p><?php echo $row['name']; ?></p>
-				<td><a href="update_image.php?id=<?php echo $row['id']; ?>">Edit</a></td>
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="image">
+					<img src="profile_images/<?php echo $row['profile']; ?>" style="width:40px;height:40px;border-radius:20px;">
+					</div>
+					<div class="info">
+					<p class="d-block"><?php echo $row['name']; ?></p>
+
+					
+						<a href="update_image.php?id=<?php echo $row['id']; ?>" style="color:blue" class="d-block">Edit</a>
+					
+					</div>
+				</div>
+				<br/><?php } ?>
 
 
-			<?php } ?>
-			</a>
-
-
-			<!-- Sidebar -->
-			<div class="sidebar">
-				<!-- Sidebar user (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 					<div class="image">
 						<img src="dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">

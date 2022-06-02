@@ -55,7 +55,7 @@ $row = mysqli_fetch_assoc($select);
         if ($update) {
             echo "<script>alert('data update successfuly!')</script>";
             echo "<script>window.open('http://localhost/kas-masjid/','_self')</script>";
-        } else {
+        } else { 
             echo "<script>alert('updation failed')</script>";
 
             echo "<script>window.open('http://localhost/kas-masjid/','_self')</script>";
