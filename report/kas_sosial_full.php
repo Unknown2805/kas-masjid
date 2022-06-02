@@ -27,8 +27,18 @@ include "../inc/rupiah.php";
 <body>
 <center>
 <h2>Laporan Rekapitulasi Kas Sosial</h2>
-<h3>Masjid Darul 'Ilmi Universitas Muria Kudus</h3>
-<p>________________________________________________________________________</p>
+<?php
+				// database connection
+				$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+
+				$select = mysqli_query($con, "select * from tb_masjid");
+				while ($row = mysqli_fetch_array($select)) {
+				?>
+				
+					<p><?php echo $row['name']; ?></p>
+
+
+				<?php } ?><p>________________________________________________________________________</p>
 
   <table border="1" cellspacing="0">
     <thead>

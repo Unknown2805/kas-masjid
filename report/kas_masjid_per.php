@@ -28,8 +28,18 @@
 <body>
 <center>
 <h2>Laporan Rekapitulasi Kas Masjid</h2>
-<h3>Masjid Darul 'Ilmi Universitas Muria Kudus</h3>
-<p>Periode : <?php $a=$dt1; echo date("d-M-Y", strtotime($a))?> s/d <?php $b=$dt2; echo date("d-M-Y", strtotime($b))?>
+<?php
+				// database connection
+				$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+
+				$select = mysqli_query($con, "select * from tb_masjid");
+				while ($row = mysqli_fetch_array($select)) {
+				?>
+				
+					<p><?php echo $row['name']; ?></p>
+
+
+				<?php } ?><p>Periode : <?php $a=$dt1; echo date("d-M-Y", strtotime($a))?> s/d <?php $b=$dt2; echo date("d-M-Y", strtotime($b))?>
 <p>________________________________________________________________________</p>
 
   <table border="1" cellspacing="0">

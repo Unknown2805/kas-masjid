@@ -1,7 +1,8 @@
 <div class="card card-info">
 	<div class="card-header">
 		<h3 class="card-title">
-			<i class="fa fa-table"></i> Data User</h3>
+			<i class="fa fa-table"></i> Data User
+		</h3>
 	</div>
 	<!-- /.card-header -->
 	<div class="card-body">
@@ -24,39 +25,36 @@
 				<tbody>
 
 					<?php
-              $no = 1;
-              $sql = $koneksi->query("select * from tb_pengguna");
-              while ($data= $sql->fetch_assoc()) {
-            ?>
+					$no = 1;
+					$sql = $koneksi->query("select * from tb_pengguna");
+					while ($data = $sql->fetch_assoc()) {
+					?>
 
-					<tr>
-						<td>
-							<?php echo $no++; ?>
-						</td>
-						<td>
-							<?php echo $data['nama_pengguna']; ?>
-						</td>
-						<td>
-							<?php echo $data['username']; ?>
-						</td>
-						<td>
-							<?php echo $data['level']; ?>
-						</td>
-						<td>
-							<a href="?page=MyApp/edit_pengguna&kode=<?php echo $data['id_pengguna']; ?>"
-							 title="Ubah" class="btn btn-success btn-sm">
-								<i class="fa fa-edit"></i>
-							</a>
-							<a href="?page=MyApp/del_pengguna&kode=<?php echo $data['id_pengguna']; ?>"
-							 onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn btn-danger btn-sm">
-								<i class="fa fa-trash"></i>
-								</>
-						</td>
-					</tr>
+						<tr>
+							<td>
+								<?php echo $no++; ?>
+							</td>
+							<td>
+								<?php echo $data['nama_pengguna']; ?>
+							</td>
+							<td>
+								<?php echo $data['username']; ?>
+							</td>
+							<td>
+								<?php echo $data['level']; ?>
+							</td>
+							<td>
+								<a href="?page=MyApp/edit_pengguna&kode=<?php echo $data['id_pengguna']; ?>" title="Ubah" class="btn shadow  btn-outline-success btn-sm">
+									edit </a>
+								<a href="?page=MyApp/del_pengguna&kode=<?php echo $data['id_pengguna']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')" title="Hapus" class="btn shadow  btn-outline-danger btn-sm">
+									delete
+									</>
+							</td>
+						</tr>
 
 					<?php
-              }
-            ?>
+					}
+					?>
 				</tbody>
 				</tfoot>
 			</table>

@@ -52,34 +52,34 @@
 			<br>
 
 			<table id="example1" class="table table-hover">
-
-			<thead>
+				<thead>
 					<tr>
 						<th>No</th>
 						<th>Tanggal
-							
+
 							<a href="http://localhost/kas-masjid/?page=i_data_km&desc=desc"><i class="fas fa-arrow-up" style="color:#000000;margin-left:2px"></i></a>
 							<a href="http://localhost/kas-masjid/?page=i_data_km&asc=asc"><i class="fas fa-arrow-down" style="color:#000000"></i></a>
-					    </th>
-						    
-							
+						</th>
+
+
 						<th>Uraian</th>
 						<th>Jumlah</th>
 						<th>aksi</th>
 					</tr>
-				</thead>
+				</thead> 
+
 				<tbody>
 					<?php
-					    if (isset($_POST["submit"])) {
-						
+					if (isset($_POST["submit"])) {
 
-						if(isset($_GET['desc']) && isset($_POST["submit"])){
+
+						if (isset($_GET['desc']) && isset($_POST["submit"])) {
 							$sort = $_GET['desc'];
 							$srch = $_POST["search"];
-						}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+						} elseif (isset($_GET['asc']) && isset($_POST["submit"])) {
 							$sort = $_GET['asc'];
 							$srch = $_POST["search"];
-						}else{
+						} else {
 							$sirt = "";
 						}
 						$sql = $koneksi->query("select * from kas_masjid where uraian_km LIKE '%$srch%' AND jenis='Masuk' OR tgl_km LIKE '%$srch%' AND jenis='Masuk' order by tgl_km $sort");
@@ -87,13 +87,13 @@
 
 						if ($data = $sql->fetch_assoc()) {
 							$no = 1;
-							if(isset($_GET['desc']) && isset($_POST["submit"])){
+							if (isset($_GET['desc']) && isset($_POST["submit"])) {
 								$sort = $_GET['desc'];
 								$srch = $_POST["search"];
-							}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+							} elseif (isset($_GET['asc']) && isset($_POST["submit"])) {
 								$sort = $_GET['asc'];
 								$srch = $_POST["search"];
-							}else{
+							} else {
 								$sort = "";
 							}
 							$sql = $koneksi->query("select * from kas_masjid where uraian_km LIKE '%$srch%' AND jenis='Masuk' OR tgl_km LIKE '%$srch%' AND jenis='Masuk' order by tgl_km $sort");
@@ -124,16 +124,16 @@
 										</a>
 									</td>
 								</tr>
-								<?php
+							<?php
 							}
 						} else {
-							if(isset($_GET['desc']) && isset($_POST["submit"])){
+							if (isset($_GET['desc']) && isset($_POST["submit"])) {
 								$sort = $_GET['desc'];
 								$srch = $_POST["search"];
-							}elseif(isset($_GET['asc']) && isset($_POST["submit"])){
+							} elseif (isset($_GET['asc']) && isset($_POST["submit"])) {
 								$sort = $_GET['asc'];
 								$srch = $_POST["search"];
-							}else{
+							} else {
 								$sort = "";
 							}
 							$sql = $koneksi->query("select * from kas_masjid where jenis='Masuk' order by tgl_km $sort");
@@ -168,11 +168,11 @@
 							}
 						}
 					} else {
-						if(isset($_GET['desc'])){
+						if (isset($_GET['desc'])) {
 							$sort = $_GET['desc'];
-						}elseif(isset($_GET['asc'])){
+						} elseif (isset($_GET['asc'])) {
 							$sort = $_GET['asc'];
-						}else{
+						} else {
 							$sort = "";
 						}
 						$sql = $koneksi->query("select * from kas_masjid where jenis='Masuk' order by tgl_km $sort");
@@ -212,7 +212,7 @@
 
 					?>
 				</tbody>
-			</table>
+			</table>	
 		</div>
 	</div>
 	<!-- /.card-body -->

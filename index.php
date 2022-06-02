@@ -29,7 +29,7 @@ include "inc/rupiah.php";
 
 		<title><?php echo $row['name']; ?></title>
 
-		<link rel="icon" href="dist/img/mosque.jpg">
+		<link rel="icon" href="profile_images/<?php echo $row['profile']; ?>">
 	<?php } ?>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +50,6 @@ include "inc/rupiah.php";
 	<!-- Alert -->
 	<script src="plugins/alert.js"></script>
 </head>
-
 
 
 <body class="hold-transition sidebar-mini sidebar">
@@ -83,22 +82,23 @@ include "inc/rupiah.php";
 			<style type="text/css">
 				p {
 					display: inline;
-					margin: 5px;
+					margin: 8px;
+
 				}
 
 				#time {
 					font-size: 20px;
-					color: #000000;
+					color: #218838;
 				}
 
 				#day {
 					font-size: 20px;
-					color: #000000;
+					color: #218838;
 				}
 
 				#date {
 					font-size: 20px;
-					color: #000000;
+					color: #218838;
 				}
 			</style>
 
@@ -177,88 +177,49 @@ include "inc/rupiah.php";
 		<!-- /.navbar -->
 
 		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+						<h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-
 					<div class="modal-body">
-						<form action="" method="POST" enctype="multipart/form-data">
-							<div align="center" class="card" style="width: 18rem;">
-								<img src=" profile_images/<?php echo $row['profile']; ?>" style="width:220px;height:200px">
-								<div class="card-body">
-
-									<div class="mb-3">
-										<input type="text" name="name" class="form-control">
-									</div>
-
-									<div class="mb-3">
-										<input type="file" name="profile" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-									</div>
-								</div>
-							</div>
-						</form>
+						...
 					</div>
-
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-						<input type="submit" name="update" value="UPDATE" class="btn btn-success my-3">
+						<button type="button" class="btn btn-primary">Understood</button>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<?php
-		if (isset($_POST['update'])) {
-			$name = $_POST['name'];
-			if (isset($_FILES['profile']['name']) && ($_FILES['profile']['name'] != "")) {
 
-				$size = $_FILES['profile']['size'];
-				$temp = $_FILES['profile']['tmp_name'];
-				$type = $_FILES['profile']['type'];
-				$profile_name = $_FILES['profile']['name'];
-				// 1st delete old file from folder
-				unlink("profile_images/$old_image");
-				// new image upload to folder
-				move_uploaded_file($temp, "profile_images/$profile_name");
-			} else {
-				$profile_name = $old_image;
-			}
-			$update = mysqli_query($con, "update student_profile set name='$name', profile='$profile_name'  where id='$id'");
 
-			if ($update) {
-				echo "<script>alert('data update successfuly!')</script>";
-				echo "<script>window.open('display_images.php','_self')</script>";
-			} else {
-				echo "<script>alert('updation failed')</script>";
 
-				echo "<script>window.open('display_images.php','_self')</script>";
-			}
-		}
-		?>
 
 
 		<!-- Main Sidebar Container -->
-		<aside class="main-sidebar sidebar-light-primary elevation-4">
+		<aside class="main-sidebar sidebar-light-primary elevation-4">	
 			<!-- Brand Logo -->
-			<a href="#" class="brand-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
-				<?php
-				// database connection
-				$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+			<?php
+			// database connection
+			$con = mysqli_connect("localhost", "root", "", "kas-masjid");
 
-				$select = mysqli_query($con, "select * from tb_masjid");
-				while ($row = mysqli_fetch_array($select)) {
-				?>
-					<p>
-						<img src="profile_images/<?php echo $row['profile']; ?>" style="width:80px;height:80px;">
-					</p>
-					<p><?php echo $row['name']; ?></p>
+			$select = mysqli_query($con, "select * from tb_masjid");
+			while ($row = mysqli_fetch_array($select)) {
+			?>
+				<p>
+					<img src="profile_images/<?php echo $row['profile']; ?>" style="width:80px;height:80px;">
+				</p>
+				<p><?php echo $row['name']; ?></p>
+				<td><a href="update_image.php?id=<?php echo $row['id']; ?>">Edit</a></td>
 
 
-				<?php } ?>
+			<?php } ?>
 			</a>
+
 
 			<!-- Sidebar -->
 			<div class="sidebar">
@@ -652,11 +613,7 @@ include "inc/rupiah.php";
 					</tr>
 				<?php } ?>
 			</div>
-			Copyright &copy;
-			<a target="_blank" href="https://www.facebook.com/radenmas.brono">
-				<strong> elseif software house</strong>
-			</a>
-			All rights reserved.
+
 		</footer>
 
 		<!-- Control Sidebar -->

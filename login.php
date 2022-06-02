@@ -23,19 +23,31 @@ include "inc/koneksi.php";
       <div class="card login-card">
         <div class="row no-gutters">
           <div class="col-md-5">
-            <img src="dist/img/mosque.jpg" alt="login" class="login-card-img">
+          <?php
+            // database connection
+            $con = mysqli_connect("localhost", "root", "", "kas-masjid");
+
+            $select = mysqli_query($con, "select * from tb_masjid");
+            while ($row = mysqli_fetch_array($select)) {
+            ?>
+
+              <img src="profile_images/<?php echo $row['profile']; ?>" alt="login" class="login-card-img"/>
+
+
+            <?php } ?>
+         
           </div>
           <div class="col-md-7">
             <div class="card-body">
               <div class="brand-wrapper">
                 <p class="login-card-description">
-                  <b>Aplikasi</b>
+                  <b>Aplikasi Kas </b>
                   <?php
                   $sql = $koneksi->query("select * from tb_masjid");
                   while ($row = mysqli_fetch_array($sql)) {
                   ?>
 
-                    <a><?php echo $row['name']; ?></a>
+                    <a style="font-weight: bold;"><?php echo $row['name']; ?></a>
 
                     <link rel="icon" href="dist/img/mosque.jpg">
                   <?php } ?>

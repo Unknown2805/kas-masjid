@@ -207,8 +207,18 @@
 
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
-      Masjid Darul 'Ilmi Universitas Muria Kudus
-    </div>
+    <?php
+				// database connection
+				$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+
+				$select = mysqli_query($con, "select * from tb_masjid");
+				while ($row = mysqli_fetch_array($select)) {
+				?>
+					
+					<p><?php echo $row['name']; ?></p>
+
+
+				<?php } ?>    </div>
     Copyright &copy;<a target="_blank" href="https://www.facebook.com/radenmas.brono"><strong> elseif software house</strong></a>
     All rights reserved.
   </footer>
