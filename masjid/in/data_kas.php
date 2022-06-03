@@ -39,7 +39,7 @@
 								<!-- <label class="form-label" for="form1">Search</label> -->
 								<input type="text" name="search" id="form1" class="form-control" />
 							</div>
-							<button type="submit" name="submit" href="http://localhost/kas-masjid/data_km.php" class="btn btn-primary">
+							<button type="submit" name="submit" href="http://localhost/kas_masjid/data_km.php" class="btn btn-primary">
 								<i class="fas fa-search"></i>
 							</button>
 						</div>

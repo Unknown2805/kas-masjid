@@ -39,7 +39,7 @@
 								<!-- <label class="form-label" for="form1">Search</label> -->
 								<input type="text" name="search" id="form1" class="form-control" />
 							</div>
-							<button type="submit" name="submit" href="http://localhost/kas-masjid/data_ks.php" class="btn btn-primary">
+							<button type="submit" name="submit" href="http://localhost/kas_masjid/data_ks.php" class="btn btn-primary">
 								<i class="fas fa-search"></i>
 							</button>
 						</div>
@@ -57,8 +57,8 @@
 					<tr>
 						<th>No</th>
 						<th>Tanggal
-							<a href="http://localhost/kas-masjid/?page=o_data_km&desc=desc"><i class="fas fa-arrow-up" style="color:#000000;margin-left:2px"></i></a>
-							<a href="http://localhost/kas-masjid/?page=o_data_km&asc=asc"><i class="fas fa-arrow-down" style="color:#000000"></i></a>
+							<a href="http://localhost/kas_masjid/?page=o_data_km&desc=desc"><i class="fas fa-arrow-up" style="color:#000000;margin-left:2px"></i></a>
+							<a href="http://localhost/kas_masjid/?page=o_data_km&asc=asc"><i class="fas fa-arrow-down" style="color:#000000"></i></a>
 					    </th>
 						    
 							

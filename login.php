@@ -25,7 +25,7 @@ include "inc/koneksi.php";
           <div class="col-md-5">
           <?php
             // database connection
-            $con = mysqli_connect("localhost", "root", "", "kas-masjid");
+            $con = mysqli_connect("localhost", "root", "", "kas_masjid");
 
             $select = mysqli_query($con, "select * from tb_masjid");
             while ($row = mysqli_fetch_array($select)) {
@@ -116,7 +116,7 @@ if (isset($_POST['btnLogin'])) {
     echo "<script>
 			Swal.fire({title: 'Login Berhasil',text: '',icon: 'success',confirmButtonText: 'OK'
 			}).then((result) => {if (result.value)
-				{window.location = 'http://localhost/kas-masjid/';}
+				{window.location = 'http://localhost/kas_masjid/';}
 			})</script>";
   } else {
     echo "<script>

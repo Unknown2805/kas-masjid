@@ -65,7 +65,7 @@ include "inc/rupiah.php";
 					</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
-					<a href="http://localhost/kas-masjid/" class="nav-link text-secondary" style="font-family:Arial, Helvetica, sans-serif;">Home</a>
+					<a href="http://localhost/kas_masjid/" class="nav-link text-secondary" style="font-family:Arial, Helvetica, sans-serif;">Home</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
 					<a href="?page=rekap_km" class="nav-link text-secondary" style="font-family:Arial, Helvetica, sans-serif;">Rekap Kas Masjid</a>
@@ -210,7 +210,7 @@ include "inc/rupiah.php";
 				<!-- Sidebar user (optional) -->
 				<?php
 			// database connection
-			$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+			$con = mysqli_connect("localhost", "root", "", "kas_masjid");
 
 			$select = mysqli_query($con, "select * from tb_masjid");
 			while ($row = mysqli_fetch_array($select)) {
@@ -235,7 +235,7 @@ include "inc/rupiah.php";
 						<img src="dist/img/avatar.png" class="img-circle elevation-2" alt="User Image">
 					</div>
 					<div class="info">
-						<a href="http://localhost/kas-masjid/" class="d-block">
+						<a href="http://localhost/kas_masjid/" class="d-block">
 							<?php echo $data_nama; ?>
 						</a>
 						<span class="badge badge-success">
@@ -253,7 +253,7 @@ include "inc/rupiah.php";
 						if ($data_level == "Administrator") {
 						?>
 							<li class="nav-item">
-								<a href="http://localhost/kas-masjid/" class="nav-link active" style="background-color:#17a2b8">
+								<a href="http://localhost/kas_masjid/" class="nav-link active" style="background-color:#17a2b8">
 									<i class="nav-icon fas fa-tachometer-alt"></i>
 									<p>
 										Dashboard
@@ -272,13 +272,13 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="http://localhost/kas-masjid/?page=i_data_km&desc=desc" class="nav-link">
+										<a href="http://localhost/kas_masjid/?page=i_data_km&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Masjid</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="http://localhost/kas-masjid/?page=o_data_km&desc=desc" class="nav-link">
+										<a href="http://localhost/kas_masjid/?page=o_data_km&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-danger"></i>
 											<p>Pengeluaran Kas Masjid</p>
 										</a>
@@ -302,13 +302,13 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="http://localhost/kas-masjid/?page=i_data_ks&desc=desc" class="nav-link">
+										<a href="http://localhost/kas_masjid/?page=i_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Sosial</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="http://localhost/kas-masjid/?page=o_data_ks&desc=desc" class="nav-link">
+										<a href="http://localhost/kas_masjid/?page=o_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-danger"></i>
 											<p>Pengeluaran Kas Sosial</p>
 										</a>
@@ -360,7 +360,7 @@ include "inc/rupiah.php";
 						} elseif ($data_level == "Bendahara") {
 						?>
 							<li class="nav-item">
-								<a href="http://localhost/kas-masjid/" class="nav-link active">
+								<a href="http://localhost/kas_masjid/" class="nav-link active">
 									<i class="nav-icon fas fa-tachometer-alt"></i>
 									<p>
 										Dashboard
@@ -379,7 +379,7 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="http://localhost/kas-masjid/?page=i_data_km&desc=desc" class="nav-link">
+										<a href="http://localhost/kas_masjid/?page=i_data_km&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Masjid</p>
 										</a>
@@ -409,13 +409,13 @@ include "inc/rupiah.php";
 								</a>
 								<ul class="nav nav-treeview">
 									<li class="nav-item">
-										<a href="http://localhost/kas-masjid/?page=i_data_ks&desc=desc" class="nav-link">
+										<a href="http://localhost/kas_masjid/?page=i_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-success"></i>
 											<p>Pemasukan Kas Sosial</p>
 										</a>
 									</li>
 									<li class="nav-item">
-										<a href="http://localhost/kas-masjid/?page=o_data_ks&desc=desc" class="nav-link">
+										<a href="http://localhost/kas_masjid/?page=o_data_ks&desc=desc" class="nav-link">
 											<i class="nav-icon far fa-circle text-danger"></i>
 											<p>Pengeluaran Kas Sosial</p>
 										</a>
@@ -608,7 +608,7 @@ include "inc/rupiah.php";
 			<div class="float-right d-none d-sm-block">
 				<?php
 				// database connection
-				$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+				$con = mysqli_connect("localhost", "root", "", "kas_masjid");
 
 				$select = mysqli_query($con, "select * from tb_masjid");
 				while ($row = mysqli_fetch_array($select)) {

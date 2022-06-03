@@ -30,7 +30,7 @@
 <h2>Laporan Rekapitulasi Kas Masjid</h2>
 <?php
 				// database connection
-				$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+				$con = mysqli_connect("localhost", "root", "", "kas_masjid");
 
 				$select = mysqli_query($con, "select * from tb_masjid");
 				while ($row = mysqli_fetch_array($select)) {

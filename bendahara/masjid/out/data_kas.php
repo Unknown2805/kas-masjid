@@ -58,8 +58,8 @@
 						<th>No</th>
 						<th>Tanggal
 							
-							<a href="http://localhost/kas-masjid/?page=o_data_km&desc=desc"><i class="fas fa-arrow-up" style="color:#000000;margin-left:2px"></i></a>
-							<a href="http://localhost/kas-masjid/?page=o_data_km&asc=asc"><i class="fas fa-arrow-down" style="color:#000000"></i></a>
+							<a href="http://localhost/kas_masjid/?page=o_data_km&desc=desc"><i class="fas fa-arrow-up" style="color:#000000;margin-left:2px"></i></a>
+							<a href="http://localhost/kas_masjid/?page=o_data_km&asc=asc"><i class="fas fa-arrow-down" style="color:#000000"></i></a>
 					    </th>
 						    
 							

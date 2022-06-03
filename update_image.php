@@ -8,7 +8,7 @@
 
 <body>
     <?php
-$con = mysqli_connect("localhost", "root", "", "kas-masjid");
+$con = mysqli_connect("localhost", "root", "", "kas_masjid");
 $id = $_GET['id'];
 $select = mysqli_query($con, "select * from tb_masjid where id='$id'");
 $row = mysqli_fetch_assoc($select);
@@ -54,11 +54,11 @@ $row = mysqli_fetch_assoc($select);
 
         if ($update) {
             echo "<script>alert('data update successfuly!')</script>";
-            echo "<script>window.open('http://localhost/kas-masjid/','_self')</script>";
+            echo "<script>window.open('http://localhost/kas_masjid/','_self')</script>";
         } else { 
             echo "<script>alert('updation failed')</script>";
 
-            echo "<script>window.open('http://localhost/kas-masjid/','_self')</script>";
+            echo "<script>window.open('http://localhost/kas_masjid/','_self')</script>";
         }
     }
     ?>
